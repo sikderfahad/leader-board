@@ -60,11 +60,12 @@ header {
 .nav {
     width: 930px;
     height: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     margin: auto;
 }
+
 .logo {
-    width: 20%;
     display: flex;
     align-items: center;
 }
@@ -78,7 +79,6 @@ header {
     color: #fff;
 }
 .menubar {
-    width: 80%;
     text-align: right;
 }
 .menubar ul {
@@ -119,6 +119,7 @@ header {
     grid-template-columns: repeat(3, 1fr);
     row-gap: 30px;
 }
+
 .player {
     display: flex;
 }
@@ -224,9 +225,7 @@ header {
 
 /* ---------------For Mobile Device------------------ */
 
-@media only screen and (max-width: 575px) {
-
-
+@media only screen and (max-width: 767px) {
     
     .nav {
         width: 100%;
@@ -263,6 +262,18 @@ header {
     .top-players, .top-blogs, .latest-courses {
         grid-template-columns: repeat(1, 1fr);
         justify-items: center;
+        row-gap: 50px;
+    }
+    .player {
+        display: block;
+        text-align: center;
+    }
+    .player-name {
+        margin: 0px;
+    }
+    .player img {
+        width: 130px;
+        height: auto;
     }
     .blog {
         display: block;
@@ -281,5 +292,53 @@ header {
     }
     .course-name {
         font-size: 18px;
+    }
+}
+
+/* ---------------For Tablet Device------------------ */
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .nav {
+        width: 90%;
+        
+    }
+    .container {
+        width: auto;
+        margin: auto;
+        padding: 0;
+        background: #fff;
+        margin-top: 50px;
+    }
+    .section-title {
+        margin: 30px 5%;
+    }
+    .top-players, .top-blogs, .latest-courses {
+        width: 90%;
+        grid-template-columns: repeat(2, 1fr);
+        margin: auto;
+        row-gap: 60px;
+    }
+    .top-blogs {
+        text-align: center;
+    }
+    .player {
+        align-items: center;
+    }
+    .player img {
+        width: 85px;
+        height: auto;
+    }
+    .blog {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .thumbnail img {
+        width: 230px;
+        height: auto;
+    }
+    .latest-courses {
+        justify-items: center;
     }
 }
